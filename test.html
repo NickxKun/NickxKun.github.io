@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vivus Animation Test</title>
+  <!-- Load Vivus from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #fff;
+    }
+    #circuit-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Ensure the SVG fills the container */
+    #circuit-container svg {
+      width: 80%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="circuit-container">
+    <!-- Inline SVG Example for the Circuit Animation -->
+    <svg id="circuit-animation" viewBox="0 0 800 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <style>
+        /* Ensure the circuit lines are visible */
+        .circuit-line {
+            fill: none;
+            stroke: #000;  /* Use a contrasting color to your background */
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+        </style>
+        <!-- Example circuit paths -->
+        <path class="circuit-line" d="M100,100 L700,100" />
+        <path class="circuit-line" d="M700,100 L700,500" />
+        <path class="circuit-line" d="M700,500 L100,500" />
+        <path class="circuit-line" d="M100,500 L100,100" />
+        <path class="circuit-line" d="M100,300 L700,300" />
+        <path class="circuit-line" d="M400,100 L400,500" />
+    </svg>
+  
+  </div>
+  <script>
+    // Initialize Vivus on the embedded SVG with the ID "circuit-animation"
+    new Vivus('circuit-animation', {
+      type: 'delayed',    // Sequential drawing effect
+      duration: 200,      // Adjust duration for smoothness
+      start: 'autostart'  // Start the animation immediately
+    });
+  </script>
+</body>
+</html>
