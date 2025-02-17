@@ -1,0 +1,36 @@
+/* Global Styles */
+body {
+  scroll-behavior: smooth;
+  font-family: Arial, sans-serif;
+}
+
+/* Hero Section */
+header {
+  position: relative;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Navbar Customization */
+.navbar-brand {
+  font-weight: bold;
+}
+
+/* Section Headings */
+section h2 {
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Footer Link Hover */
+footer a {
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: #0d6efd;
+}
+
+/* Contact Form Styles */
+form .form-control {
+  border-radius: 0;
+}
