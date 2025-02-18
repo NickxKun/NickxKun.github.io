@@ -57,20 +57,114 @@ form .form-control {
   background-color: rgba(0, 0, 0, 0.8);  /* Adjust color/opacity as desired */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-/* Target project cards within the #projects section */
-#projects .card {
-  transform: scale(0.8);
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Override for Projects Page: Make navbar static */
+.projects-page #navbar {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: none !important;
 }
 
-/* Hover effect for project cards */
-#projects .card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+#navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.project-nav {
+  display: flex;
+  align-items: center;
+}
+/* Minimal arrow buttons */
+.minimal-arrow {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: color 0.2s ease;
+}
+.minimal-arrow:hover {
+  color: #ddd;
+}
+/* Dropdown styling */
+#projectSelect {
+  margin: 0 10px;
+  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  max-width: 200px;
+  width: 100%;
+}
+@media (max-width: 576px) {
+  #projectSelect {
+    max-width: 150px;
+  }
+}
+/* IEEE-style project layout */
+.project-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+.project-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #222;
+  padding-bottom: 0.5rem;
+}
+.project-content p {
+  margin-bottom: 1rem;
+}
+.project-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+/* Minimal arrow buttons */
+.minimal-arrow {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: color 0.2s ease;
+}
+.minimal-arrow:hover {
+  color: #ddd;
+}
 
+/* Custom Dropdown styling for project title */
+.project-dropdown .btn {
+  border: none;
+  background: none;
+  padding: 0;
+  /* Responsive font-size: minimum 0.8rem, scales with viewport, maximum 1rem */
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 250px; /* Fixed width container */
+  display: inline-block;
+}
+
+.project-dropdown .dropdown-menu {
+  background-color: #222;
+  border: none;
+  box-shadow: none;
+}
+.project-dropdown .dropdown-menu li a {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+.project-dropdown .dropdown-menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.project-content {
+  padding-top: 60px;
+}
 

@@ -3,72 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nikhil Kunjoor Portfolio</title>
+  <title>Projects - Nikhil Kunjoor</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Montserrat Font  -->
+  <!-- Montserrat Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
-  <!-- Navbar -->
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Nikhil Kunjoor</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Projects</h2>
-      <div class="row">
-        <!-- Project Card 1 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100 project-card">
-            <img src="assets/project1.jpg" class="card-img-top" alt="Project 1">
-            <div class="card-body">
-              <h5 class="card-title">Hybrid Adaptive Compression Algorithms for Energy-Efficient AI Inference</h5>
-              <p class="card-text">Leveraged hardware profiling for edge devices to implement a recommendation system for hardware-specific compression techniques.</p>
-            </div>
-          </div>
+<body class="projects-page">
+  <!-- Navbar with central project navigation controls -->
+  <nav id="navbar" class="navbar fixed-top navbar-dark">
+    <div class="container d-flex align-items-center position-relative">
+      <!-- Left: Brand (optional on small screens) -->
+      <a class="navbar-brand d-none d-md-block" href="index.html">Nikhil Kunjoor</a>
+      
+      <!-- Center: Project Navigation (arrows and custom dropdown) -->
+      <div class="project-nav mx-auto d-flex align-items-center">
+        <button id="prevProject" class="minimal-arrow">&lt;</button>
+        
+        <!-- Custom Dropdown -->
+        <div class="dropdown project-dropdown">
+          <button class="btn text-white dropdown-toggle" id="projectDropdownButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <span id="currentProjectTitle">Project Title</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="projectDropdownButton" id="projectDropdownMenu">
+            <!-- Dropdown items populated dynamically -->
+          </ul>
         </div>
         
-        <!-- Project Card 2 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100">
-            <img src="assets/project2.jpg" class="card-img-top" alt="Project 2">
-            <div class="card-body">
-              <h5 class="card-title">Design and Simulation of a 4×4 Systolic Array</h5>
-              <p class="card-text">Architected and implemented a 4×4 systolic array for efficient matrix multiplication using SystemVerilog with a focus on parallel processing.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 3 -->
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100">
-            <img src="assets/project3.jpg" class="card-img-top" alt="Project 3">
-            <div class="card-body">
-              <h5 class="card-title">CPU Microarchitecture Verification Framework</h5>
-              <p class="card-text">Developed a UVM-based verification environment to simulate and validate CPU microarchitecture features, ensuring robustness and efficiency.</p>
-            </div>
-          </div>
-        </div>
+        <button id="nextProject" class="minimal-arrow">&gt;</button>
+      </div>
+      
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  
+  <!-- Project Content Area -->
+  <div id="app" class="project-content">
+    <div v-if="currentProject">
+      <h2>{{ currentProject.title }}</h2>
+      <p><em>{{ currentProject.subtitle }}</em></p>
+      <img v-if="currentProject.image" :src="currentProject.image" :alt="currentProject.title">
+      <div v-for="(section, index) in currentProject.sections" :key="index">
+        <p>{{ section }}</p>
       </div>
     </div>
-  </section>
+  </div>
   
   <!-- Contact Section -->
   <section id="contact" class="py-5 bg-light">
@@ -105,16 +91,18 @@
       <div class="mt-2">
         <a href="https://linkedin.com/in/nikhil-kunjoor" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
         <a href="mailto:nkunjoor@asu.edu" class="text-white me-3"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/nikhil-kunjoor" class="text-white"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/NickxKun" class="text-white"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </footer>
   
+  
+  <!-- Vue.js for SPA functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <!-- Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Vivus for SVG animations (load this before your custom JS) -->
-  <script src="https://cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
   <!-- Custom JS -->
+  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
