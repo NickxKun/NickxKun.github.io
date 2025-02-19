@@ -35,7 +35,7 @@ const projects = [{
 
 // Vue instance to manage project content
 new Vue({
-    el: '#app',
+    el: '#projects',
     data: {
         projects: projects, // your project data array
         currentIndex: 0
