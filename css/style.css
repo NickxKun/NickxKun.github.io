@@ -3,24 +3,20 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Hero Section */
 header {
   position: relative;
   color: #fff;
 }
 
-/* Navbar Customization */
 .navbar-brand {
   font-weight: bold;
 }
 
-/* Section Headings */
 section h2 {
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
-/* Footer Link Hover */
 footer a {
   transition: color 0.3s;
 }
@@ -28,12 +24,10 @@ footer a:hover {
   color: #0d6efd;
 }
 
-/* Contact Form Styles */
 form .form-control {
   border-radius: 0;
 }
 
-/* Circuits Homepage */
 #circuit-container {
   width: 100vw;
   height: 100vh;
@@ -49,21 +43,21 @@ form .form-control {
 }
 
 #navbar {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 #navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.8);  /* Adjust color/opacity as desired */
+  background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-/* Override for Projects Page: Make navbar static */
+
 .projects-page #navbar {
   background-color: rgba(0, 0, 0, 0.8) !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: none !important;
 }
-
 #navbar .container {
   display: flex;
   justify-content: space-between;
@@ -75,7 +69,7 @@ form .form-control {
   align-items: center;
   padding-bottom: 10px;
 }
-/* Minimal arrow buttons */
+
 .minimal-arrow {
   background: none;
   border: none;
@@ -88,7 +82,7 @@ form .form-control {
 .minimal-arrow:hover {
   color: #ddd;
 }
-/* Dropdown styling */
+
 #projectSelect {
   margin: 0 10px;
   font-size: 1rem;
@@ -98,20 +92,9 @@ form .form-control {
   max-width: 200px;
   width: 100%;
 }
-@media (max-width: 576px) {
-  #projectSelect {
-    max-width: 150px;
-  }
-}
-/* IEEE-style project layout */
+
 .project-content {
   line-height: 1.6;
-}
-.project-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #222;
-  padding-bottom: 0.5rem;
 }
 .project-content p {
   margin-bottom: 1rem;
@@ -121,7 +104,7 @@ form .form-control {
   border-radius: 8px;
   margin-bottom: 1rem;
 }
-/* Minimal arrow buttons */
+
 .minimal-arrow {
   background: none;
   border: none;
@@ -135,12 +118,10 @@ form .form-control {
   color: #545454;
 }
 
-/* Custom Dropdown styling for project title */
 .project-dropdown .btn {
   border: none;
   background: none;
   padding: 0;
-  /* Responsive font-size: minimum 0.8rem, scales with viewport, maximum 1rem */
   font-size: clamp(0.8rem, 2vw, 1rem);
   white-space: nowrap;
   overflow: hidden;
@@ -169,13 +150,12 @@ form .form-control {
   margin: 2rem 0;
 }
 
-/* Timeline Section Headings with Icon */
 .timeline h3 {
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
   color: #333;
   position: relative;
-  padding-left: 3rem;
+  padding-left: 3.1rem;
   font-weight: 700;
 }
 
@@ -194,12 +174,10 @@ form .form-control {
   z-index: 2;
 }
 
-
-/* Neumorphic Bullet (smaller & aligned) */
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: 2px;
+  left: 2.5px;
   top: 1.5rem;
   width: 10px;
   height: 10px;
@@ -215,21 +193,19 @@ form .form-control {
   top: -40px;
   left: 7px;
   width: 1px;
-  height: calc(100% + 40px);
-  background: var(--jet);
+  height: 100%;
   background-color: #5e5e5e;
   z-index: 1;
 }
 
-/* Neumorphic Timeline Items */
 .timeline-item {
   position: relative;
   border-radius: 12px;
+  padding: 1rem;
 }
 
-/* Timeline Content */
 .timeline-content {
-  padding-left: 3rem;
+  padding-left: 2.2rem;
 }
 
 .timeline-content h4 {
@@ -242,16 +218,13 @@ form .form-control {
   list-style: disc;
 }
 
-/* Neumorphic Skills Section */
 .skills-section {
   padding-left: 3rem;
   padding-right: 3rem;
 }
-
 .skill {
   margin-bottom: 1rem;
 }
-
 .skill-name {
   font-size: 1rem;
   margin-bottom: 0.25rem;
@@ -264,7 +237,6 @@ form .form-control {
   position: relative;
   font-weight: 700;
 }
-
 .skills-section h3::before {
   content: attr(data-icon);
   font-family: "Font Awesome 6 Free";
@@ -289,10 +261,124 @@ form .form-control {
   box-shadow: inset 2px 2px 4px #bebebe,
               inset -2px -2px 4px #ffffff;
 }
-
 .progress-bar {
   background-color: #505050;
   color: transparent;
   text-align: center;
 }
 
+.skills-icons-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.skill-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.skill-icon:hover {
+  transform: scale(1.2);
+  color: #0d6efd; 
+}
+/* RESPONSIVE STYLES */
+
+@media (max-width: 768px) {
+  .skills-icons-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .project-nav {
+    justify-content: center;
+  }
+  .project-dropdown .btn {
+    max-width: 60vw;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  #navbar .navbar-brand {
+    font-size: 1rem;
+  }
+  .minimal-arrow {
+    font-size: 1.2rem;
+    padding: 0 8px;
+  }
+  .project-dropdown .btn {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    max-width: 70vw;
+  }
+  .project-content h2 {
+    font-weight: bold;
+  }
+  .project-content p {
+    font-size: 0.9rem;
+  }
+  .project-content img {
+    max-width: 40%;
+  }
+  #projectSelect {
+    max-width: 150px;
+  }
+  .project-nav {
+    justify-content: center;
+  }
+  .timeline {
+    padding-left: 10px;
+  }
+  .timeline h3 {
+    font-size: 1.5rem;
+    padding-left: 2.5rem;
+  }
+  .timeline h3::before {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    border-radius: 20px;
+    left: -0.8rem;
+  }
+  .timeline-item::before {
+    left: 3.5px;
+    top: 1rem;
+    width: 8px;
+    height: 8px;
+  }
+  .timeline-content h4 {
+    font-size: 1.1rem;
+  }
+  .timeline-content p,
+  .timeline-content ul {
+    font-size: 0.9rem;
+  }
+  .timeline-content {
+    padding-left: 1.5rem;
+  }
+  .skills-section h3 {
+    font-size: 1.5rem;
+  }
+  .skills-section h3::before {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    border-radius: 20px;
+    left: -3rem;
+  }
+  .skill-name {
+    font-size: 0.9rem;
+  }
+  .progress {
+    height: 16px;
+  }
+  .progress-bar {
+    font-size: 0.75rem;
+  }
+  .skills-icons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
