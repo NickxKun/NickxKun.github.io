@@ -126,7 +126,6 @@ form .form-control {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 80vw;
   display: inline-block;
   -webkit-text-fill-color: #000;
 }
@@ -270,23 +269,31 @@ form .form-control {
 .skills-icons-grid {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 1rem;
   justify-items: center;
   align-items: center;
 }
 
 .skill-icon {
+  display: grid; 
+  justify-items: center;
   font-size: 2rem;
   transition: transform 0.3s ease, color 0.3s ease;
   margin-bottom: 1rem;
-  cursor: pointer;
 }
 
 .skill-icon:hover {
   transform: scale(1.2);
   color: #0d6efd; 
 }
+
+.skill-icon span {
+  padding-top: 10px;
+  font-size: 1rem;
+  text-align: center;
+}
+
 /* RESPONSIVE STYLES */
 
 @media (max-width: 768px) {
@@ -298,6 +305,12 @@ form .form-control {
   }
   .project-dropdown .btn {
     max-width: 60vw;
+  }
+  .project-dropdown .dropdown-menu {
+    max-width: 60vw;
+  }
+  .project-dropdown .dropdown-menu li a {
+    text-overflow: ellipsis;
   }
 }
 
@@ -314,6 +327,9 @@ form .form-control {
   }
   .project-dropdown .btn {
     font-size: clamp(0.8rem, 3vw, 0.9rem);
+    max-width: 70vw;
+  }
+  .project-dropdown .dropdown-menu {
     max-width: 70vw;
   }
   .project-content h2 {
