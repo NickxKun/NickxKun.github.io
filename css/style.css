@@ -43,12 +43,14 @@ form .form-control {
 }
 
 #navbar {
+  color: transparent;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 #navbar.scrolled {
+  color: rgba(255, 255, 255, 1);
   background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -292,6 +294,16 @@ form .form-control {
   padding-top: 10px;
   font-size: 1rem;
   text-align: center;
+}
+
+.parallax {
+  background-image: url('../assets/animated.gif');
+  background-color: rgba(0, 0, 0, 0.422);
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* RESPONSIVE STYLES */
