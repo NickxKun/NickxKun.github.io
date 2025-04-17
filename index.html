@@ -28,6 +28,7 @@
           <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#game-dev">Interests</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
         </ul>
       </div>
     </div>
@@ -177,43 +178,55 @@
           <img src="assets/mc.png" alt="Main Character" class="img-fluid rounded-circle mb-3" style="max-width: 25vh;">
         </div>
         <div class="col-md-8">
-          <p>I'm currently working on a Game that would revolve around making Electronics Concepts Learnable in a fun and interactive style - A Duolingo for Electronics and Computer Engineering Concepts but packed into a Pokemon esk RPG style!</p>
-          <p>It's also an excuse to sharpen my C++ skills so I can challenges myself and work using libSDL2. I intend to update my progess here steadily and I'll add a section for Cadence Digital badges in the future.</p>
-          <p>The game will most likely be pixel-art style and the image here would be the main chaacter of the game!</p>
+          <p>I'm currently working on a Game based on Cryptography! The game is called "Terminal Out" and it's an isometric 3D Pixel Art RPG made in Godot.</p>
+          <p>It'll allow me to learn gdscript and develop interesting game mechanics that I've always wanted to try out!</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Contact Section - Under Maintainence -->
-  <!--
-  <section id="contact" class="py-5 bg-light">
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5 bg-light">
     <div class="container">
-      <h2 class="text-center mb-4">Contact Me</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+        <h2 class="text-center mb-4">Creative Gallery</h2>
+        <p class="text-center mb-3">Showcasing my work with Adobe Creative Suite (Photoshop, InDesign, Illustrator)</p>
+        
+        <!-- Category Filter Dropdown -->
+        <div class="gallery-nav mx-auto d-flex align-items-center justify-content-center mb-4">
+            <div class="dropdown gallery-dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ currentCategoryTitle }}
+                </button>
+                <ul class="dropdown-menu">
+                    <li v-for="category in categories" :key="category">
+                        <a class="dropdown-item" 
+                           href="#" 
+                           @click.prevent="setCategory(category)"
+                           :class="{ active: currentCategory === category }">
+                            {{ category.charAt(0).toUpperCase() + category.slice(1) }}
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Your Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Enter your email">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Your Message</label>
-              <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </div>
-          </form>
         </div>
-      </div>
+        
+        <!-- Gallery Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+            <div v-for="item in filteredItems" :key="item.id" class="col">
+                <div class="gallery-item-wrapper">
+                    <div class="gallery-item">
+                        <div class="media-container" v-html="getMediaElement(item)"></div>
+                        <div class="gallery-item-caption">
+                            <h5>{{ item.title }}</h5>
+                            <p class="small mb-0">{{ item.description }}</p>
+                            <small class="text-muted">Created with {{ item.software }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
   </section>
-  -->
 
   <!-- Footer -->
   <footer class="py-4 bg-dark text-white">
@@ -236,5 +249,45 @@
   <!-- Custom JS -->
   <script src="js/main.js"></script>
   <script src="js/projects.js"></script>
+  <script src="js/gallery.js"></script>
+
+  <!-- Add this after your gallery section but before closing body tag -->
+  <div class="modal fade" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-dark">
+            <div class="modal-header border-0">
+                <h5 class="modal-title text-white" id="mediaModalLabel">{{ currentModalItem.title }}</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <div class="modal-media-container" v-if="currentModalItem">
+                    <img v-if="!isVideo(currentModalItem)" 
+                         :src="'assets/gallery/' + currentModalItem.filename" 
+                         :alt="currentModalItem.title"
+                         class="modal-media">
+                    <video v-else 
+                           class="modal-media" 
+                           controls 
+                           autoplay 
+                           loop>
+                        <source :src="'assets/gallery/' + currentModalItem.filename" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="modal-footer border-0 justify-content-between">
+                <button type="button" class="btn btn-outline-light" @click="prevModalItem" v-if="filteredItems.length > 1">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <div class="modal-info text-white text-center">
+                    <p class="mb-0">{{ currentModalItem.description }}</p>
+                    <small class="text-muted">Created with {{ currentModalItem.software }}</small>
+                </div>
+                <button type="button" class="btn btn-outline-light" @click="nextModalItem" v-if="filteredItems.length > 1">
+                    Next <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
 </body>
 </html>

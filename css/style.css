@@ -306,6 +306,63 @@ form .form-control {
   background-size: cover;
 }
 
+/* Gallery Styles */
+.gallery-item-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Creates square aspect ratio */
+    margin-bottom: 1rem;
+}
+
+.gallery-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.media-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa; /* Light background for loading state */
+}
+
+/* Force square aspect ratio on all media elements */
+.media-container img,
+.media-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important; /* Override any inline styles */
+    height: 100% !important; /* Override any inline styles */
+    object-fit: cover;
+    object-position: center;
+}
+
+.gallery-item-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    padding: 0.75rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1; /* Ensure caption appears above media */
+}
+
+.gallery-item:hover .gallery-item-caption {
+    transform: translateY(0);
+}
+
 /* RESPONSIVE STYLES */
 
 @media (max-width: 768px) {

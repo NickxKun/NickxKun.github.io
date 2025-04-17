@@ -1,0 +1,274 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Drawtober Collection",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay1.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 2,
+      "title": "Drawtober Day 2",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay2.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 3,
+      "title": "Drawtober Day 3",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay3.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 4,
+      "title": "Drawtober Day 4",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay4.png",
+      "software": "Photoshop",    
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 5,
+      "title": "Drawtober Day 5",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay5.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 6,
+      "title": "Drawtober Day 6",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay6.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 7,
+      "title": "Drawtober Day 7",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay7.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 8,
+      "title": "Drawtober Day 8",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay8.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 9,
+      "title": "Drawtober Day 9",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay9.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 10,
+      "title": "Drawtober Day 10",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay10.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 11,
+      "title": "Drawtober Day 11",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay11.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 12,
+      "title": "Drawtober Day 12",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay12.png",
+      "software": "Photoshop",    
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 13,
+      "title": "Drawtober Day 13",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay13.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 14,
+      "title": "Drawtober Day 14",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay14.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 15,
+      "title": "Drawtober Day 15",
+      "description": "Part of Drawtober Challenge",
+      "filename": "DrawtoberDay15.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Drawtober"
+    },
+    {
+      "id": 16,
+      "title": "E Club Logo Animation",
+      "description": "Animated Logo Design",
+      "filename": "E Club  Logo Anim_Trim.mp4",
+      "software": "Adobe After Effects",
+      "type": "video",
+      "category": "Logo Design"
+    },
+    {
+      "id": 17,
+      "title": "Emoji Project",
+      "description": "Custom Emoji Design",
+      "filename": "EmojiProject.png",
+      "software": "Adobe Illustrator",
+      "type": "image",
+      "category": "Digital Art"
+    },
+    {
+      "id": 18,
+      "title": "Environment Concept",
+      "description": "Environmental Design Study",
+      "filename": "Environment.png",
+      "software": "Aesprite",
+      "type": "image",
+      "category": "Concept Art"
+    },
+    {
+      "id": 19,
+      "title": "Sketch 1",
+      "description": "Sketch Collection",
+      "filename": "IMG_20191230_174222.jpg",
+      "software": "Traditional Art",
+      "type": "image",
+      "category": "Sketch"
+    },
+    {
+      "id": 20,
+      "title": "Sketch 2",
+      "description": "Sketch Collection",
+      "filename": "IMG_20200102_120950.jpg",
+      "software": "Traditional Art",
+      "type": "image",
+      "category": "Sketch"
+    },
+    {
+      "id": 21,
+      "title": "Sketch 3",
+      "description": "Sketch Collection",
+      "filename": "IMG_20200128_233853.jpg",
+      "software": "Traditional Art",
+      "type": "image",
+      "category": "Sketch"
+    },
+    {
+      "id": 22,
+      "title": "Smelle Apps",
+      "description": "App Design Concept",
+      "filename": "SmelleApps.png",
+      "software": "Photoshop",
+      "type": "image",
+      "category": "Digital Art"
+    },
+    {
+      "id": 23,
+      "title": "Number Six",
+      "description": "Typography Design",
+      "filename": "Numbersix.png",
+      "software": "Adobe Illustrator",
+      "type": "image",
+      "category": "Typography"
+    },
+    {
+      "id": 24,
+      "title": "Dhaba Chai",
+      "description": "Logo Design",
+      "filename": "Dhaba Chai.png",
+      "software": "Adobe Illustrator",
+      "type": "image",
+      "category": "Logo Design"
+    },
+    {
+      "id": 25,
+      "title": "Vaxin Logo",
+      "description": "Brand Design",
+      "filename": "Vaxin_Final.png",
+      "software": "Adobe Illustrator",
+      "type": "image",
+      "category": "Brand Design"
+    },
+    {
+      "id": 26,
+      "title": "Case Justice Logo",
+      "description": "Brand Design",
+      "filename": "CaseJustice_Dark.png",
+      "software": "Adobe Illustrator",
+      "type": "image",
+      "category": "Brand Design"
+    },
+    {
+      "id": 27,
+      "title": "Lanterrite Festival",
+      "description": "Renders for a Competition",
+      "filename": "1.png",
+      "software": "Blender",
+      "type": "image",
+      "category": "Blender Renders"
+    },
+    {
+      "id": 28,
+      "title": "DTIYS Competition",
+      "description": "More Blender Renders",
+      "filename": "2.png",
+      "software": "Blender",
+      "type": "image",
+      "category": "Blender Renders"
+    },
+    {
+      "id": 29,
+      "title": "DTIYS Competition",
+      "description": "More Blender Renders",
+      "filename": "3.png",
+      "software": "Blender",
+      "type": "image",
+      "category": "Blender Renders"
+    },
+    {
+      "id": 30,
+      "title": "Mobile App Design",
+      "description": "UI/UX Design",
+      "filename": "4.png",
+      "software": "Figma",
+      "type": "image",
+      "category": "UI/UX"
+    }
+  ]
+} 
